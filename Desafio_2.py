@@ -1,5 +1,9 @@
-# 2- Escriba un programa que pregunte al usuario la hora actual t del reloj y un número entero de horas h, que indique qué hora marcará el reloj dentro de h horas:
-
+"""
+    2 - Escriba un programa que pregunte al usuario la hora actual t del reloj y
+    un número entero de horas h,
+    que indique qué hora marcará el reloj dentro de h horas
+"""
+# función de control
 def query_ctrl(msg, min_time, max_time):
     while True:
         try:
@@ -16,13 +20,14 @@ def query_ctrl(msg, min_time, max_time):
         except ValueError:
             print('Ingrese un número entero.')
 
-
+# Pregunta: Hora actual
 print('Que hora es? ')
 query_hour = query_ctrl('  hora (24hs): ', 0, 24)
 query_minutes = query_ctrl('  minutos: ', 0, 60)
 
 print(f'Hora actual: {query_hour}:{query_minutes} hs\n')
 
+# Pregunta: horas próximas
 query_next_hour = query_ctrl(
     f'Quieres saber que hora será cuando pasen algunas horas? \n  Cuantas horas quieres agregar?: ', 0, 99999)
 query_next_minutes = query_ctrl(

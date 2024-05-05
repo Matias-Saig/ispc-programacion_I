@@ -13,7 +13,7 @@ Duración tramo: 0
 Tiempo total de viaje: 2:12 horas 
 """
 
-
+# función de control
 def query_ctrl(msg):
     while True:
         try:
@@ -27,15 +27,17 @@ def query_ctrl(msg):
         except ValueError:
             print('El valor no es válido. Ingrese los minutos de su tramo (ejemplo 45): ')
 
-
+# Inicio
 print('Tiempo de viaje')
-
 acc = 0
 acc_minutes = 0
+
+# Pregunta: minutos por tramo
 while True:
     query_minutes = query_ctrl(
         '\nCuántos minutos son este tramo? (0 para terminar) ')
-
+    
+    # Finalización y resultado
     if query_minutes == 0:
         hours = acc_minutes // 60
         minutes = acc_minutes % 60
@@ -43,7 +45,9 @@ while True:
         print(
             f'\nTiempo total del viaje: \n  {acc_minutes} minutos ~ {hours}:{minutes:02} hs, {days} días')
         break
-
+    
+    # Acumulación de n de tramos y de minutos
     acc += 1
     acc_minutes += query_minutes
+    
     print(f'Tramo {acc}: {query_minutes} minutos\n')
