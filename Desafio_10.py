@@ -6,111 +6,108 @@ pieza puede ser capturada por otra si está en una casilla a la cual la otra pue
 desplazarse:
 Escriba un programa que reciba como entrada las posiciones en el tablero de un alfil y de
 una torre, e indique cuál pieza captura a la otra:
+"""
 
 
-Fila alfil: 7
-Columna alfil: 6
-Fila torre: 4
-Columna torre: 3
-Alfil captura
+# control pregunta
+def query_ctrl(msg):
+    error = "    No es válido. Puede ingresar del 1 al 8"
+    while True:
+        try:
+            control = int(input(msg))
+            if 0 < control <= 8:
+                return control
+            else:
+                print(error)
 
-Fila alfil: 3
-Columna alfil: 4
-Fila torre: 7
-Columna torre: 4
-Torre captura
+        except ValueError:
+            print(error)
 
-Fila alfil: 3
-Columna alfil: 3
-Fila torre: 8
-Columna torre: 5
-Ninguna captura
+# pregunta, posición de pieza
+def chess_piece_ctrl(title):
+    print(f"\n{title}")
+    row_control = query_ctrl("  Fila: ")
+    column_control = query_ctrl("  Columna: ")
+    return [row_control, column_control]
 
-
- """
 
 # TORRE
 def tower_attack(tower_pos, bishop_pos):
-    print("- Ataque de Torre -")
     # row
     if tower_pos[0] == bishop_pos[0]:
         return [True, bishop_pos[0], bishop_pos[1], "horizontal"]
-    #column
+    # column
     if tower_pos[1] == bishop_pos[1]:
         return [True, bishop_pos[0], bishop_pos[1], "vertical"]
-    print("Torre no puede atacar Alfil")
-    return False
-    
+    return [False]
+
 
 # ALFIL
-# ataque ascendente
-def bishop_attack_forward(bishop_pos, tower_pos):
+# movimiento
+def bishop_move(bishop_pos, tower_pos, row_change, column_change):
     bishop_row, bishop_column = bishop_pos
-   
-    while bishop_row < row[-1] and bishop_column < column[-1]:             
-        if bishop_row == tower_pos[0] and bishop_column == tower_pos[1]:
-            return [True, bishop_row, bishop_column]
-        else:
-            bishop_row += 1 
-            bishop_column += 1
 
-# ataque descendente
-def bishop_attack_backward(bishop_pos, tower_pos):
-    bishop_row, bishop_column = bishop_pos
-    
-    while bishop_row > row[0] and bishop_column > column[0]:             
-        if bishop_row == tower_pos[0] and bishop_column == tower_pos[1]:
-            return [True, bishop_row, bishop_column]
-        else:
-            bishop_row -= 1 
-            bishop_column -= 1
+    while (row[0] <= bishop_row <= row[-1]) and (column[0] <= bishop_column <= column[-1]):
 
-# ataque 
+        if bishop_row == tower_pos[0] and bishop_column == tower_pos[1]:
+            return True
+        else:
+            bishop_row += row_change
+            bishop_column += column_change
+    return False
+
+# ataque
 def bishop_attack(bishop_pos, tower_pos):
-    print("\n- Ataque de Alfil -")
-        
-    forward = bishop_attack_forward(bishop_pos, tower_pos)
-    backward = bishop_attack_backward(bishop_pos, tower_pos)
-        
-    if not forward == None and forward[0] == True:
-        return print(f"\nAlfil captura a torre en ataque ascendente en fila {forward[1]} y columna {forward[2]}")
-    
-    if not backward == None and backward[0] == True:
-        return print(f"\nAlfil captura a torre en ataque descendente en fila {backward[1]} y columna {backward[2]}")
-     
-    print("- Alfil no puede capturar a torre -")
-    return False 
+    condicional = [True, bishop_pos[0], bishop_pos[1]]
 
+    if bishop_move(bishop_pos, tower_pos, 1, -1):
+        condicional.append("frontal izquierdo")
+        return condicional
+
+    if bishop_move(bishop_pos, tower_pos, 1, 1):
+        condicional.append("frontal derecho")
+        return condicional
+
+    if bishop_move(bishop_pos, tower_pos, -1, -1):
+        condicional.append("descendente izquierdo")
+        return condicional
+
+    if bishop_move(bishop_pos, tower_pos, -1, 1):
+        condicional.append("descendente derecho")
+        return condicional
+
+    return [False]
+
+
+# Movimientos
 def chess_move(bishop, tower):
+
+    print(f"""
+Alfil: fila {bishop[0]}  columna {bishop[1]}
+Torre: fila {tower[0]}  columna {tower[1]}
+""")
     tower_result = tower_attack(tower, bishop)
     bishop_result = bishop_attack(bishop, tower)
 
-    if tower_result == True:
-        print("\n# Torre gana")
-    elif bishop_result == True:
-        print("\n# Alfil gana")
+    if tower_result[0]:
+        print(
+            f"\n# Torre captura Alfil, en ataque {tower_result[3]} en fila {tower_result[1]} y columna {tower_result[2]}")
+    elif bishop_result[0]:
+        print(
+            f"\n# Alfil captura Torre, en ataque {bishop_result[3]} en fila {bishop_result[1]} y columna {bishop_result[2]}")
     else:
         print("\n# Ninguna captura")
 
 
-
 # Tablero
-row = [1,2,3,4,5,6,7,8]
-column = [1,2,3,4,5,6,7,8]
-
-# position: [row, column]
-bishop_position = [7,6] 
-tower_position = [7,3]
+row = [1, 2, 3, 4, 5, 6, 7, 8]
+column = [1, 2, 3, 4, 5, 6, 7, 8]
 
 # Ejecución
-chess_move(bishop_position,tower_position)
+print("\nTorre vs Alfil")
+print("(Las filas y columnas están enumeradas del 1 al 8)")
 
-        
-# print(f"bishop: {bishop_pos} || tower: {tower_pos}")
+bishop_position = chess_piece_ctrl("Cuál es la posición del Alfil")
+tower_position = chess_piece_ctrl("Cuál es la posición de la Torre")
 
-
-    
-            
-
-
-
+chess_move(bishop_position, tower_position)
