@@ -12,3 +12,6 @@ class CalcSpeed:
     def calculate_speed(self):
         speed = round(((self.rpm * 60) / self.time_seconds))
         return speed
+
+    def get_speed(self):
+        return self.calculate_speed()

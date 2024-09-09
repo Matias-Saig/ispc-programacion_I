@@ -6,9 +6,10 @@ from calc_calories import CalcCalories
 
 # success
 (50,60,717),
-(25,90,135),
+(10,30,72),
 
 # error
+(25,90,538),
 (0, 0,50),
 (0,0,0)
 

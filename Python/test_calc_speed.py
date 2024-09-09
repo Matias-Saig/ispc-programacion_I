@@ -3,16 +3,15 @@ from calc_speed import CalcSpeed
 
 @pytest.mark.parametrize("rpm, time, expected_result", [
 
-# success
-(30,90,20),
-(50,30,100),
-(75,55,82),
+    # success
+    (30,90,20),
+    (50,30,100),
+    (75,55,82),
 
-
-# error
-(24,65,1.5),
-(54,34,76.2)
-(0,0,0)
+    # error
+    (24,65,1.5),
+    (54,34,76.2),
+    (0,0,0)
 
 ])
 

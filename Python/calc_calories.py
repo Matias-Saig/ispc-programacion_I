@@ -1,7 +1,7 @@
 class CalcCalories:
     def __init__(self, power, time_seconds):
         if not isinstance(power, int) or not isinstance(time_seconds, int):
-            raise TypeError("Los valores de power y time_seconds deben ser números enteros")
+            raise TypeError("Los valores deben ser números enteros")
         
         self.power = power
         self.time_seconds = time_seconds
