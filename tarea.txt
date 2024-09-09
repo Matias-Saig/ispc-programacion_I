@@ -1,78 +1,74 @@
-Entega 8/sept 23:59
+[14:12, 7/9/2024] Matias: Aquí te presento algunos algoritmos y escalas de clasificación comunes para calcular las calorías, velocidad, distancia y frecuencia cardíaca en una elíptica:
+
+Calorías:
 
 
-opc 1 - Máquina de hacer paraguas
-opc 2 - Elíptica
+Velocidad:
 
----------------------------------------------
+- Algoritmo: Velocidad (RPM) = (Número de revoluciones x 60) / Tiempo (segundos)
+- Donde:
+    - Número de revoluciones se mide mediante sensores en la elíptica
+    - Tiempo (segundos) se mide mediante un cronómetro
 
-Tablas
+Distancia:
 
-Informacion del producto
-Niveles de esfuerzo: resistencia
-Pantalla: Velocidad, pulso, tiempo, calorías y distancia. 
-monitor: pulso, encendido, apagado
-usuario: avances
+- Algoritmo: Distancia (km) = (Velocidad x Tiempo) / 3.6
+- Donde:
+    - Velocidad (RPM) se calcula mediante el algoritmo anterior
+    - Tiempo (segundos) se mide mediante un cronómetro
+    - 3.6 es un factor de conversión para pasar de RPM a km/h
 
+Frecuencia cardíaca:
 
----------------------------------------------
+- Algoritmo: Frecuencia cardíaca (lpm) = (Número de pulsaciones x 60) / Tiempo (segundos)
+- Donde:
+    - Número de pulsaciones se mide mediante sensores de frecuencia cardíaca
+    - Tiempo (segundos) se mide mediante un cronómetro
 
+Escala de clasificación para la frecuencia cardíaca:
 
-Caminador Eliptico con Asiento Athletic 500E
+- Zona 1: 50-60 lpm (recuperación)
+- Zona 2: 60-70 lpm (calentamiento)
+- Zona 3: 70-80 lpm (entrenamiento aeróbico)
+- Zona 4: 80-90 lpm (entrenamiento anaeróbico)
+- Zona 5: 90-100 lpm (esfuerzo máximo)
 
-# Niveles de esfuerzo 8: resistencia
+Escala de clasificación para la intensidad del esfuerzo:
 
-# Información en pantalla : Velocidad, pulso, tiempo, calorías y distancia. 
+- Nivel 1: 30-40% de la potencia máxima (recuperación)
+- Nivel 2: 40-50% de la potencia máxima (calentamiento)
+- Nivel 3: 50-60% de la potencia máxima (entrenamiento aeróbico)
+- Nivel 4: 60-70% de la potencia máxima (entrenamiento anaeróbico)
+- Nivel 5: 70-80% de la potencia máxima (esfuerzo máximo)
 
-# Hand Pulse: recibe señal
+Es importante mencionar que estos algoritmos y escalas de clasificación pueden variar dependiendo del modelo y la marca de la elíptica, y que la precisión de las mediciones puede variar dependiendo de la calidad de la elíptica y la calibración de los sensores.
+[14:12, 7/9/2024] Matias: Aquí te presento algunos algoritmos y escalas de clasificación comunes para calcular y clasificar los watts en una elíptica:
 
-# Monitor electrónico: encender, apagar
-Sí
+Algoritmo para calcular los watts:
 
-# Información del modelo 
-Modelo Athletic 500E
-Origen China
-...
+- Watts = (Fuerza x Velocidad) / 1000
+- Donde:
+    - Fuerza se mide mediante sensores en la elíptica (en Newtons o kgf)
+    - Velocidad se mide mediante sensores en la elíptica (en RPM o m/s)
+    - 1000 es un factor de conversión para pasar de Newtons x m/s a watts
 
+Escala de clasificación para los watts:
 
+- Zona 1: 0-50 watts (recuperación)
+- Zona 2: 50-100 watts (calentamiento)
+- Zona 3: 100-150 watts (entrenamiento aeróbico ligero)
+- Zona 4: 150-200 watts (entrenamiento aeróbico moderado)
+- Zona 5: 200-250 watts (entrenamiento aeróbico intenso)
+- Zona 6: 250-300 watts (entrenamiento anaeróbico)
+- Zona 7: 300+ watts (esfuerzo máximo)
 
+Clasificación de los watts según el nivel de esfuerzo:
 
-------------------
+- Nivel 1: 0-100 watts (recuperación y calentamiento)
+- Nivel 2: 100-150 watts (entrenamiento aeróbico ligero)
+- Nivel 3: 150-200 watts (entrenamiento aeróbico moderado)
+- Nivel 4: 200-250 watts (entrenamiento aeróbico intenso)
+- Nivel 5: 250-300 watts (entrenamiento anaeróbico)
+- Nivel 6: 300+ watts (esfuerzo máximo)
 
-Descripción
-Descripción
-El caminador elíptico Athletic con asiento 500E es la herramienta perfecta para realizar un entrenamiento cardiovascular completo en casa. Está fabricado con materiales de alta calidad y cuenta con un diseño ergonómico que la hace cómoda de usar.
-
-Tiene un disco de inercia de 5 kg, lo que le da un peso y un equilibrio perfectos para realizar entrenamientos de intensidad moderada. También cuenta con resistencia magnética, lo que permite ajustar la dificultad del entrenamiento de forma sencilla. Incluye un monitor electrónico que mide velocidad, pulso, tiempo, calorías y distancia. Esto te permite realizar un seguimiento de tu progreso y motivarte a seguir adelante.
-
-El caminador elíptico Athletic con asiento 500E es la solución perfecta para las personas que buscan un entrenamiento cardiovascular completo y cómodo en casa.
-
-Caracteristicas
-
-
-Características:
-
-Tipo: Caminador elíptico con asiento
-Ejercicios: Escalar
-Tipo de resistencia: Magnética
-Peso máximo: 110 kg
-Disco de inercia: 5 kg
-Movimiento de brazos
-Niveles de esfuerzo: 8
-Monitor electrónico
-Funciones del monitor: Velocidad, pulso, tiempo, calorías y distancia
-
-Hand Pulse
-
-Rueda de traslado
-
-Dimensiones: 155x62x129 cm
-Peso producto: 35,2 kg
-Beneficios:
-
-Entrenamiento cardiovascular completo
-Cómodo de usar
-Ajuste de la dificultad
-Seguimiento del progreso
-Compatible con personas de hasta 110 kg
-
+Es importante mencionar que estos algoritmos y escalas de clasificación pueden variar dependiendo del modelo y la marca de la elíptica, y que la precisión de las mediciones puede variar dependiendo de la calidad de la elíptica y la calibración de los sensores.
